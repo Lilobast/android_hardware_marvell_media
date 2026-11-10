@@ -392,7 +392,9 @@ extern OMX_ERRORTYPE storeMetaDataInBufferHandling(IppOmxCompomentWrapper_t *hCo
                         return OMX_ErrorNotImplemented;
                     }
                 }
-                android::sp<android::MemoryHeapBase> memHeap = new android::MemoryHeapBase("/dev/ion", size, android::MemoryHeapBase::PHYSICALLY_CONTIGUOUS|android::MemoryHeapBase::NO_CACHING);
+                // N's MemoryHeapBase has no PHYSICALLY_CONTIGUOUS flag (it was a
+                // vendor extension); this local heap is never used afterwards anyway.
+                android::sp<android::MemoryHeapBase> memHeap = new android::MemoryHeapBase("/dev/ion", size, android::MemoryHeapBase::NO_CACHING);
 
 
 
