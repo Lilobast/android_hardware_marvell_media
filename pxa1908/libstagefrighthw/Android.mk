@@ -16,6 +16,7 @@
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_C_INCLUDES += \
     hardware/marvell/pxa1908/original-kernel-headers \

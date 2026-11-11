@@ -1,6 +1,7 @@
 LOCAL_PATH:=$(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_PREBUILT_LIBS := \
 	libcodecaacdec.a \
 	libcodecaacenc.a \
@@ -68,6 +69,7 @@ endef
 $(call translate-a-to-so, $(MY_IPP_STATIC_LIBRARIES))
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_WHOLE_STATIC_LIBRARIES := libcodecwmadec
 LOCAL_SRC_FILES := rand.c
 LOCAL_PRELINK_MODULE := false
@@ -77,6 +79,7 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_WHOLE_STATIC_LIBRARIES := libcodecvmetaenc
 LOCAL_SHARED_LIBRARIES += libvmeta libvmetahal libmiscgen
 LOCAL_SRC_FILES := getpagesize.c
@@ -87,6 +90,7 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_WHOLE_STATIC_LIBRARIES := libcodecvmetadec
 LOCAL_SHARED_LIBRARIES += libvmetahal libvmeta libmiscgen
 LOCAL_SRC_FILES := getpagesize.c
@@ -97,6 +101,7 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_WHOLE_STATIC_LIBRARIES := libippsp
 LOCAL_SHARED_LIBRARIES := libmiscgen
 LOCAL_MODULE := libippsp
@@ -106,6 +111,7 @@ LOCAL_PRELINK_MODULE := false
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_WHOLE_STATIC_LIBRARIES := libippvp 
 LOCAL_SHARED_LIBRARIES := libmiscgen libippsp
 LOCAL_MODULE := libippvp
