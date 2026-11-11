@@ -1,7 +1,6 @@
 LOCAL_PATH:=$(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_PREBUILT_LIBS := \
 	lib_il_basecore_wmmx2lnx.a \
 	lib_il_ippomxmem_wmmx2lnx.a \
@@ -29,14 +28,12 @@ include $(BUILD_MULTI_PREBUILT)
 #netflix drm.play
 ifeq ($(ENABLE_MARVELL_DRMPLAY),true)
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_PREBUILT_LIBS := lib_il_drmplayer_wmmx2lnx.a
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_MULTI_PREBUILT)
 endif
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_PRELINK_MODULE := false
 
@@ -124,4 +121,5 @@ LOCAL_COPY_HEADERS_TO := \
 LOCAL_MODULE := libMrvlOmx
 LOCAL_MODULE_TAGS := optional
 
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 include $(BUILD_SHARED_LIBRARY)

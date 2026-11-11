@@ -2,7 +2,6 @@
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_C_INCLUDES += \
 	$(LOCAL_PATH) \
@@ -19,4 +18,5 @@ LOCAL_SHARED_LIBRARIES := libcodecvmetadec libcodecmpeg4dec libvmetahal libmiscg
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE:= appvmetadec
 
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 include $(BUILD_EXECUTABLE)

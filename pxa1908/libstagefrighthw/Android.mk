@@ -16,7 +16,6 @@
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_C_INCLUDES += \
     hardware/marvell/pxa1908/original-kernel-headers \
@@ -97,5 +96,7 @@ endif
 
 LOCAL_MODULE:= libstagefrighthw
 
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
+LOCAL_SHARED_LIBRARIES += liblog
 include $(BUILD_SHARED_LIBRARY)
 

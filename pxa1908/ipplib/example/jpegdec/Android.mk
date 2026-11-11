@@ -1,7 +1,6 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 
 LOCAL_CFLAGS +=  -D_IPP_LINUX
@@ -25,6 +24,7 @@ LOCAL_C_INCLUDES := \
     ../misc \
     vendor/marvell/generic/ipplib/include \
 
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 include $(BUILD_EXECUTABLE)
 
 

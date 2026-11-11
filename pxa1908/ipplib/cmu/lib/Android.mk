@@ -5,7 +5,6 @@ MY_IPP_STATIC_LIBRARIES := \
 	libicrctrlsvr
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_PREBUILT_LIBS := libicrdriver_android.a libicrctrlsvr.a
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_MULTI_PREBUILT)

@@ -1,7 +1,6 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)   \
@@ -33,4 +32,5 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_SHARED_LIBRARIES := libmedia libutils libsurfaceflinger_client libcutils libui libstagefright
 LOCAL_MODULE := libdrmplaysink
 LOCAL_MODULE_TAGS := optional
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 include $(BUILD_SHARED_LIBRARY)

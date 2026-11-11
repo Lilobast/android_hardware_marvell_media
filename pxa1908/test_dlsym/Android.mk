@@ -17,7 +17,6 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_C_INCLUDES := \
 
 LOCAL_SRC_FILES := main.cpp
@@ -32,12 +31,13 @@ LOCAL_MODULE      := test_dlsym
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS      += -Werror
 
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_SHARED_LIBRARIES := liblog libcutils libutils
 LOCAL_SRC_FILES := dlmain.c
 LOCAL_MODULE := test_lib
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 include $(BUILD_SHARED_LIBRARY)

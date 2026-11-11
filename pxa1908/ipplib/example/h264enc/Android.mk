@@ -1,7 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_PRELINK_MODULE := false
 
@@ -26,4 +25,5 @@ LOCAL_MODULE_PATH :=$(LOCAL_PATH)
 
 -include $(PV_TOP)/Android_system_extras.mk
 
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 include $(BUILD_EXECUTABLE)
